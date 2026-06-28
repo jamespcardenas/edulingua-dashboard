@@ -1,0 +1,411 @@
+:root{
+    --bg:#f8f6f2;
+    --card:#ffffff;
+    --text:#2d2d2d;
+    --border:#e4e4e4;
+    --accent:#4d6d9a;
+
+    --green:#4caf50;
+    --orange:#f4a261;
+    --red:#e76f51;
+    --blue:#5c7cfa;
+    --purple:#7b61ff;
+
+    --radius:14px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:'DM Sans',sans-serif;
+
+    line-height:1.5;
+
+}
+
+.container{
+
+    width:min(1100px,92%);
+
+    margin:auto;
+
+}
+
+header{
+
+    padding:40px 0;
+
+    text-align:center;
+
+}
+
+header h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:2.8rem;
+
+    margin-bottom:8px;
+
+}
+
+header p{
+
+    opacity:.75;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:24px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.card h2{
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:20px;
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+}
+
+label{
+
+    display:block;
+
+    font-size:.9rem;
+
+    margin-bottom:6px;
+
+}
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:10px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    font-family:inherit;
+
+    font-size:.95rem;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:11px 18px;
+
+    background:var(--accent);
+
+    color:white;
+
+    font-family:inherit;
+
+    transition:.2s;
+
+}
+
+button:hover{
+
+    opacity:.92;
+
+}
+
+form button{
+
+    margin-top:20px;
+
+}
+
+.search{
+
+    margin-bottom:25px;
+
+}
+
+.search input{
+
+    background:white;
+
+}
+
+.student-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:22px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+.student-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.student-name{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:1.7rem;
+
+}
+
+.student-language{
+
+    margin-top:6px;
+
+    color:#666;
+
+}
+
+.level-badge{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:.85rem;
+
+    font-weight:bold;
+
+}
+
+.level-A1{background:#5cb85c;}
+
+.level-A2{background:#7cb342;}
+
+.level-B1{background:#42a5f5;}
+
+.level-B2{background:#1565c0;}
+
+.level-C1{background:#8e44ad;}
+
+.level-C2{background:#5e35b1;}
+
+.credits{
+
+    font-weight:bold;
+
+}
+
+.progress{
+
+    margin:20px 0;
+
+}
+
+progress{
+
+    width:100%;
+
+    height:18px;
+
+    margin-top:8px;
+
+}
+
+.progress-text{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-size:.9rem;
+
+}
+
+.average{
+
+    margin-bottom:18px;
+
+}
+
+.average strong{
+
+    color:var(--accent);
+
+}
+
+.toggleModules{
+
+    width:100%;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.modules{
+
+    margin-top:25px;
+
+}
+
+.module{
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    background:#fcfcfc;
+
+}
+
+.module h3{
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:18px;
+
+}
+
+.field{
+
+    margin-bottom:16px;
+
+}
+
+.achievements{
+
+    display:grid;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.achievements label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.achievements input{
+
+    width:auto;
+
+}
+
+.percentage{
+
+    font-weight:bold;
+
+    color:var(--accent);
+
+}
+
+.payment{
+
+    background:var(--orange);
+
+}
+
+.payment.paid{
+
+    background:var(--green);
+
+}
+
+hr{
+
+    margin:25px 0;
+
+    border:none;
+
+    border-top:1px solid var(--border);
+
+}
+
+@media(max-width:700px){
+
+.student-header{
+
+flex-direction:column;
+
+}
+
+header h1{
+
+font-size:2.1rem;
+
+}
+
+}
