@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EduLingua Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>EduLingua Dashboard</h1>
+        <p>Student Progress Manager</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- Student Form -->
+
+    <section class="card">
+
+        <h2>Add Student</h2>
+
+        <form id="studentForm">
+
+            <div class="grid">
+
+                <div>
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        id="studentName"
+                        required>
+                </div>
+
+                <div>
+                    <label>Language</label>
+
+                    <select id="language">
+
+                        <option>English</option>
+                        <option>French</option>
+                        <option>Spanish</option>
+                        <option>German</option>
+                        <option>Italian</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>Level</label>
+
+                    <select id="level">
+
+                        <option>A1</option>
+                        <option>A2</option>
+                        <option>B1</option>
+                        <option>B2</option>
+                        <option>C1</option>
+                        <option>C2</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label>Credits</label>
+
+                    <input
+                        type="number"
+                        id="credits"
+                        value="10"
+                        min="0">
+
+                </div>
+
+                <div>
+
+                    <label>Teacher</label>
+
+                    <input
+                        type="text"
+                        id="teacher">
+
+                </div>
+
+            </div>
+
+            <button type="submit">
+                Add Student
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- Search -->
+
+    <section class="search">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search student...">
+
+    </section>
+
+    <!-- Student List -->
+
+    <section id="studentsList">
+
+    </section>
+
+</main>
+
+<!-- Student Template -->
+
+<template id="studentTemplate">
+
+    <article class="student-card">
+
+        <div class="student-header">
+
+            <div>
+
+                <h2 class="student-name"></h2>
+
+                <p class="student-language"></p>
+
+                <span class="level-badge"></span>
+
+            </div>
+
+            <div class="credits">
+
+                ⭐ <span class="credit-value"></span> lessons
+
+            </div>
+
+        </div>
+
+        <div class="progress">
+
+            <label>Progress</label>
+
+            <progress
+                class="progress-bar"
+                max="100"
+                value="0">
+            </progress>
+
+            <span class="progress-text"></span>
+
+        </div>
+
+        <div class="average">
+
+            Average Grade
+
+            <strong class="average-grade">
+
+                0 / 25
+
+            </strong>
+
+        </div>
+
+        <button class="toggleModules">
+
+            Show Progress
+
+        </button>
+
+        <div class="modules hidden">
+
+        </div>
+
+    </article>
+
+</template>
+
+<!-- Module Template -->
+
+<template id="moduleTemplate">
+
+<div class="module">
+
+<h3 class="module-title"></h3>
+
+<div class="field">
+
+<label>Lesson Date</label>
+
+<input
+type="date"
+class="lesson-date">
+
+</div>
+
+<div class="field">
+
+<label>Lesson Notes</label>
+
+<textarea
+class="lesson-notes"
+rows="3"></textarea>
+
+</div>
+
+<div class="achievements">
+
+<label>
+
+<input
+type="checkbox"
+class="achievement">
+
+Achievement 1
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+class="achievement">
+
+Achievement 2
+
+</label>
+
+<label>
+
+<input
+type="checkbox"
+class="achievement">
+
+Achievement 3
+
+</label>
+
+</div>
+
+<hr>
+
+<div class="field">
+
+<label>Test Date</label>
+
+<input
+type="date"
+class="test-date">
+
+</div>
+
+<div class="field">
+
+<label>Grade (0–25)</label>
+
+<input
+type="number"
+min="0"
+max="25"
+class="grade">
+
+</div>
+
+<div class="field">
+
+<label>Percentage</label>
+
+<p class="percentage">
+
+0%
+
+</p>
+
+</div>
+
+<div class="field">
+
+<label>Test Notes</label>
+
+<textarea
+rows="3"
+class="test-notes"></textarea>
+
+</div>
+
+<div class="field">
+
+<label>Payment</label>
+
+<button class="payment">
+
+Pending
+
+</button>
+
+</div>
+
+</div>
+
+</template>
+
+<script src="script.js"></script>
+
+</body>
+</html>
