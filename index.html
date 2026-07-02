@@ -1,296 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>EduLingua Administration</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-
-font-family:'Poppins',sans-serif;
-
-background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
-
-min-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:40px;
-
-color:white;
-
-}
-
-.container{
-
-width:100%;
-max-width:650px;
-
-background:rgba(255,255,255,.08);
-
-backdrop-filter:blur(18px);
-
-border-radius:30px;
-
-padding:40px;
-
-box-shadow:0 20px 60px rgba(0,0,0,.35);
-
-text-align:center;
-
-}
-
-.logo{
-
-width:110px;
-height:110px;
-
-border-radius:50%;
-
-background:white;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:48px;
-
-margin:auto;
-margin-bottom:20px;
-
-}
-
-h1{
-
-font-size:36px;
-margin-bottom:10px;
-
-}
-
-.subtitle{
-
-opacity:.85;
-
-margin-bottom:35px;
-
-font-size:17px;
-
-line-height:1.6;
-
-}
-
-.section{
-
-margin-top:25px;
-
-text-align:left;
-
-}
-
-.section h2{
-
-font-size:18px;
-
-margin-bottom:15px;
-
-opacity:.8;
-
-}
-
-.link{
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-padding:18px 20px;
-
-margin-bottom:15px;
-
-background:white;
-
-color:#1e3a8a;
-
-text-decoration:none;
-
-border-radius:18px;
-
-font-weight:600;
-
-transition:.25s;
-
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-
-}
-
-.link:hover{
-
-transform:translateY(-4px);
-
-background:#eff6ff;
-
-}
-
-.icon{
-
-font-size:22px;
-
-margin-right:12px;
-
-}
-
-.left{
-
-display:flex;
-align-items:center;
-
-}
-
-.arrow{
-
-font-size:20px;
-
-}
-
-.footer{
-
-margin-top:35px;
-
-font-size:13px;
-
-opacity:.7;
-
-}
-
-</style>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language School App</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.08);
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1e40af;
+            font-weight: bold;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,.08);
+        }
+
+        .card h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+        }
+
+        th {
+            background: #2563eb;
+            color: white;
+            padding: 14px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f8fbff;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            color: white;
+            font-size: .85rem;
+        }
+
+        .completed {
+            background: #16a34a;
+        }
+
+        .pending {
+            background: #f59e0b;
+        }
+
+        .future {
+            background: #2563eb;
+        }
+
+        .cta {
+            text-align: center;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.08);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1e293b;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+    <h1>Language School Manager</h1>
+    <p>
+        Manage students, assign book activities, monitor completed lessons,
+        and organize upcoming practice in one simple platform.
+    </p>
+</header>
 
-<div class="logo">
-🌎
-</div>
+<nav>
+    <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#students">Students</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#start">Get Started</a></li>
+    </ul>
+</nav>
 
-<h1>EduLingua</h1>
+<main>
 
-<p class="subtitle">
-Administration Portal<br>
-Welcome! Select one of the tools below.
+<section id="features">
+    <h2>Platform Features</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>👨‍🎓 Student Management</h3>
+            <p>Create student profiles, organize classes, and keep student information in one place.</p>
+        </div>
+
+        <div class="card">
+            <h3>📚 Book Activities</h3>
+            <p>Assign activities from different books and monitor each student's learning progress.</p>
+        </div>
+
+        <div class="card">
+            <h3>✅ Progress Tracking</h3>
+            <p>Track completed activities, pending exercises, and future lessons.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Teacher Dashboard</h3>
+            <p>View student progress quickly and identify what each learner should practice next.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="students">
+
+<h2>Example Student List</h2>
+
+<table>
+<thead>
+<tr>
+<th>Student</th>
+<th>Level</th>
+<th>Book</th>
+<th>Completed</th>
+<th>Next Activity</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Emma Johnson</td>
+<td>A1</td>
+<td>English File Beginner</td>
+<td>12 Activities</td>
+<td>Unit 4 - Listening</td>
+</tr>
+
+<tr>
+<td>Carlos Gómez</td>
+<td>B1</td>
+<td>Speak Up 2</td>
+<td>31 Activities</td>
+<td>Unit 8 - Grammar</td>
+</tr>
+
+<tr>
+<td>Sophia Brown</td>
+<td>A2</td>
+<td>English File Elementary</td>
+<td>20 Activities</td>
+<td>Unit 6 - Reading</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section id="activities">
+
+<h2>Example Activity Timeline</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Activity</th>
+<th>Book Unit</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Vocabulary Practice</td>
+<td>Unit 3</td>
+<td><span class="status completed">Completed</span></td>
+</tr>
+
+<tr>
+<td>Grammar Exercises</td>
+<td>Unit 4</td>
+<td><span class="status pending">In Progress</span></td>
+</tr>
+
+<tr>
+<td>Speaking Practice</td>
+<td>Unit 5</td>
+<td><span class="status future">Upcoming</span></td>
+</tr>
+
+<tr>
+<td>Writing Assignment</td>
+<td>Unit 5</td>
+<td><span class="status future">Upcoming</span></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+<section id="start">
+
+<div class="cta">
+
+<h2>Start Managing Your Language School</h2>
+
+<p>
+Create students, assign books, schedule activities,
+track learning progress, and help every learner succeed.
 </p>
 
-<div class="section">
-
-<h2>Administration</h2>
-
-<a class="link" href="#">
-<div class="left">
-<span class="icon">👨‍🎓</span>
-Student Management
-</div>
-
-<span class="arrow">→</span>
-
-</a>
-
-<a class="link" href="#">
-<div class="left">
-<span class="icon">📅</span>
-Class Schedule
-</div>
-
-<span class="arrow">→</span>
-
-</a>
-
-<a class="link" href="#">
-<div class="left">
-<span class="icon">📚</span>
-Book Activities
-</div>
-
-<span class="arrow">→</span>
-
-</a>
-
-<a class="link" href="#">
-<div class="left">
-<span class="icon">📝</span>
-Homework Center
-</div>
-
-<span class="arrow">→</span>
-
-</a>
-
-<a class="link" href="#">
-<div class="left">
-<span class="icon">💰</span>
-Payments & Finance
-</div>
-
-<span class="arrow">→</span>
-
-</a>
-
-<a class="link" href="#">
-<div class="left">
-<span class="icon">📊</span>
-Student Progress
-</div>
-
-<span class="arrow">→</span>
-
-</a>
-
-<a class="link" href="#">
-<div class="left">
-<span class="icon">👨‍🏫</span>
-Teachers
-</div>
-
-<span class="arrow">→</span>
-
-</a>
-
-<a class="link" href="#">
-<div class="left">
-<span class="icon">⚙️</span>
-Settings
-</div>
-
-<span class="arrow">→</span>
-
-</a>
+<button onclick="alert('Future feature: Open Student Dashboard')">
+Open Dashboard
+</button>
 
 </div>
 
-<div class="footer">
+</section>
 
-EduLingua Language School<br>
+</main>
 
-Administration Dashboard
-
-</div>
-
-</div>
+<footer>
+    © 2026 Language School Manager • Demo Landing Page
+</footer>
 
 </body>
 </html>
